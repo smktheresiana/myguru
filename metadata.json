@@ -1,0 +1,6 @@
+{
+  "name": "THERESIANA CARE+",
+  "description": "Integrated Teaching & Learning System for SMK Theresiana Semarang. CARE Your Future Through Intelligent Education.",
+  "requestFramePermissions": ["camera", "geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

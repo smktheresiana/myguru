@@ -1,0 +1,91 @@
+{
+  "$schema": "https://raw.githubusercontent.com/firebase/firebase-tools/master/schema/firestore-blueprint.schema.json",
+  "collections": {
+    "teachers": {
+      "schema": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string" },
+          "name": { "type": "string" },
+          "nip": { "type": "string" },
+          "role": { "type": "string" },
+          "subject": { "type": "string" }
+        },
+        "required": ["id", "name", "nip", "role", "subject"]
+      }
+    },
+    "students": {
+      "schema": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string" },
+          "name": { "type": "string" },
+          "nis": { "type": "string" },
+          "attendance": { "type": "string" },
+          "grades": {
+            "type": "object",
+            "properties": {
+              "formatif": { "type": "number" },
+              "sumatif": { "type": "number" },
+              "care": { "type": "string" },
+              "shape": { "type": "number" }
+            },
+            "required": ["formatif", "sumatif", "care", "shape"]
+          }
+        },
+        "required": ["id", "name", "nis", "attendance", "grades"]
+      }
+    },
+    "rpps": {
+      "schema": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string" },
+          "mataPelajaran": { "type": "string" },
+          "kelas": { "type": "string" },
+          "fase": { "type": "string" },
+          "materi": { "type": "string" },
+          "jp": { "type": "number" },
+          "metode": { "type": "string" },
+          "model": { "type": "string" },
+          "content": { "type": "string" },
+          "lkpdContent": { "type": "string" },
+          "rubrikContent": { "type": "string" },
+          "createdAt": { "type": "string" },
+          "status": { "type": "string" }
+        },
+        "required": ["id", "mataPelajaran", "kelas", "fase", "materi", "jp", "metode", "model", "content", "createdAt", "status"]
+      }
+    },
+    "sessions": {
+      "schema": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string" },
+          "rppId": { "type": "string" },
+          "currentStep": { "type": "string" },
+          "timerSeconds": { "type": "number" },
+          "isTimerRunning": { "type": "boolean" },
+          "notes": { "type": "string" },
+          "attendanceChecked": { "type": "boolean" }
+        },
+        "required": ["id", "rppId", "currentStep", "timerSeconds", "isTimerRunning", "notes", "attendanceChecked"]
+      }
+    },
+    "files": {
+      "schema": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string" },
+          "name": { "type": "string" },
+          "type": { "type": "string" },
+          "size": { "type": "string" },
+          "createdAt": { "type": "string" },
+          "rppId": { "type": "string" },
+          "content": { "type": "string" }
+        },
+        "required": ["id", "name", "type", "size", "createdAt"]
+      }
+    }
+  }
+}
